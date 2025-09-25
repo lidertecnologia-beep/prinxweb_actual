@@ -1,0 +1,78 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $font-primary;
+    margin-left: 0;
+    //transicion para el efecto del menu cuando se traslada o mueve el body
+    transition: margin-left 0.3s ease;
+}
+
+h1,
+h2 {
+    margin: 0;
+    color: $color-font-title;
+}
+
+h1 {
+    font-size: $font-title-size;
+}
+
+h2 {
+    font-size: $font-subtitle-size;
+}
+
+h3 {
+    font-size: $font-subtitle-size-2;
+}
+
+ul,
+li,
+a {
+    text-decoration: none;
+    list-style: none;
+}
+
+button {
+    border: none;
+    outline: none;
+    outline-style: none;
+    box-shadow: none;
+    border-color: transparent;
+}
+
+textarea,
+input {
+    font-size: $font-content-size;
+    font-family: $font-primary;
+}
+
+table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: grey;
+}
+
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+th {
+    font-weight:  normal;
+}

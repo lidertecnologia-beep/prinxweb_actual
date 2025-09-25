@@ -1,0 +1,21 @@
+// Definir el mixin
+@mixin crear-widths($cantidad, $incremento) {
+    $width: $incremento;
+    @for $i from 1 through $cantidad {
+      .w-#{$i} {
+        width: $width * 1rem;
+      }
+      $width: $width + $incremento;
+    }
+  }
+  
+
+@mixin crear-widths-percent($cantidad, $incremento) {
+  $width: $incremento;
+  @for $i from 1 through $cantidad {
+    .w-p-#{$i} {
+      width: $width * 1%;
+    }
+    $width: $width + $incremento;
+  }
+}

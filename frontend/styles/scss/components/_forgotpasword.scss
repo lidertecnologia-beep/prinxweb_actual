@@ -1,0 +1,17 @@
+//patron mobile first smarphone
+.card-forgotpassword {
+    padding: 1rem;
+    & .span-norecibecode{
+        margin-right: 1em;
+    }
+}
+
+//table
+@include media-min(md) {
+    .forgotpassword {
+        width: 50%;
+    }
+    .card-forgotpassword {
+        width: 70%;
+    }       
+}

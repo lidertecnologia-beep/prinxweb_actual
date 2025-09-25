@@ -1,0 +1,100 @@
+.separator {
+    border-bottom: 1px solid $color-accent;
+    content: "";
+}
+
+.all-border-div {
+    border: 1px solid $color-accent;
+    border-radius: .4em;
+}
+
+.col-borderL {
+    border-left: 1px solid $color-accent;
+}
+
+.perfil-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 1px solid $color-primary;
+    cursor: pointer;
+    background-color: $color-primary;
+    font-size: $font-subtitle-size;
+    color: #fff;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.font-weight-600 {
+    font-weight: 600;
+    color: $color-font-label;
+}
+
+.subtitle {
+    font-weight: 600;
+    font-size: $font-subtitle-size;
+    color: $color-secondary-variation-dark-4;
+}
+
+.subtitle-2 {
+    @extend .subtitle;
+
+    font-size: $font-subtitle-size-2;
+}
+
+.z-index-fondo {
+    z-index: $zindex-background;
+}
+
+.font-size-base {
+    font-size: $font-content-size;
+}
+
+.center-element-xy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input.numero-solicitud {
+    font-size: $font-subtitle-size;
+    font-weight: 600;
+    color: $color-font-label;
+    opacity: 1;
+}
+
+.font-content-base {
+    font-size: $font-content-size;
+}
+
+  // width en rem
+  @include crear-widths(20, 1);
+
+  // width en porcentaje
+  @include crear-widths-percent(100, 1);
+  
+
+
+//table
+@include media-max(md) {
+    .perfil-icon {
+        border: 1px solid #fff;
+    }
+
+    .add-solicitud {
+        display: none;
+    }
+}
+
+
+//smartphone
+@include media-max(sm) {
+    .add-solicitud {
+        display: none;
+    }
+}

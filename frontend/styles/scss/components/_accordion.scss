@@ -1,0 +1,55 @@
+.p-accordion .p-accordion-tab {
+    margin-bottom: 0;
+}
+
+.p-accordion-header-link {
+    cursor: pointer;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: relative;
+    text-decoration: none;
+}
+
+.p-accordion .p-accordion-header .p-accordion-header-link {
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    color: #495057;
+    background: #f8f9fa;
+    font-weight: 600;
+    border-radius: 3px;
+    transition: box-shadow 0.2s;
+}
+
+.p-accordion .p-accordion-tab .p-accordion-header .p-accordion-header-link {
+    border-radius: 0;
+}
+
+.p-accordion .p-accordion-tab:first-child .p-accordion-header .p-accordion-header-link {
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+.accordion-demo .accordion-custom i,
+.accordion-demo .accordion-custom span {
+    vertical-align: middle;
+}
+
+.accordion-demo .accordion-custom span {
+    margin: 0 0.5rem;
+}
+
+.accordion-demo .p-accordion p {
+    line-height: 1.5;
+    margin: 0;
+}
+
+.p-rating .p-rating-icon.pi {
+    font-size: 2rem;
+    color: $color-primary;
+}
