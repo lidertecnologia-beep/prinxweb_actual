@@ -1,0 +1,123 @@
+.header,
+.footer {
+    display: none;
+}
+
+.main-container {
+    width: 100%;
+    padding: 2rem 2rem;
+    min-height: calc(100vh - #{$height-bottom-bar});
+    margin-bottom: 4rem;
+
+    &__title {
+        display: flex;
+        justify-content: center;
+        font-size: $font-title-size;
+        text-align: center;
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+
+        & h1 {
+            font-weight: bold;
+        }
+    }
+}
+
+//table
+@include media-min(md) {
+    /* Estilos header */
+    .header {
+        height: $height-header;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        display: flex;
+        justify-content: space-between;
+        background-color: #fff;
+        z-index: $zindex-from-background;
+
+        &__menu {
+            display: flex;
+            align-items: center;
+            height: inherit;
+            margin-left: 2rem;
+            width: 30%;
+        }
+
+        &__logo-cliente {
+            width: 30%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &__perfil {
+            width: 30%;
+            display: flex;
+            align-items: center;
+            margin-right: 2rem;
+            justify-content: flex-end;
+        }
+
+        &__perfil .perfil-icon {
+            margin: 1em;
+        }
+    }
+
+    .perfil-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-weight: 500;
+    }
+
+    .perfil-nombre {
+        font-size: $font-subtitle-size;
+    }
+
+    .perfil-empresa {
+        font-size: $font-subtitle-size-2;
+    }
+
+    .main-container {
+        width: 100%;
+        margin-top: $height-header;
+        padding: 2rem 3rem;
+        min-height: $height-main-content;
+        margin-bottom: .1rem;
+
+        &__title {
+            font-size: $font-title-size;
+            font-weight: 800;
+            text-align: left;
+            margin-top: 2rem;
+        }
+    }
+
+    .not-position-header {
+        position: relative !important;
+    }
+
+    .mt-main-traslate-menu {
+        margin-top: 0;
+    }
+
+    .footer {
+        position: relative;
+        height: $height-footer;
+        padding: 0 3rem;
+        display: block;
+        z-index: $zindex-background;
+
+        &__logo-left {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: inherit;
+        }
+    }
+}
+
+//desktop
+@include media-min(lg) {
+}

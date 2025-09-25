@@ -1,0 +1,179 @@
+.p-button,
+.p-button-ghost {
+    box-shadow: none;
+    color: #ffffff;
+    background-color: $color-primary;
+    border: 1px solid $color-primary;
+    padding: 0.75rem 1rem;
+    font-size: $font-content-size;
+    transition: background-color 0.1s;
+    border-radius: 3px;
+
+    &__large {
+        width: 100%;
+    }
+}
+
+.p-button.p-button-small {
+    padding: 0.25rem 0.25rem;
+    font-size: $font-size-btn-small;
+}
+
+.p-button-ghost {
+    color: $color-font-content;
+    background-color: #fff;
+    border: 1px solid $color-primary;
+}
+
+.p-button-ghost.p-button-ghost-small {
+    padding: 0.25rem 0.25rem;
+    font-size: $font-size-btn-small;
+}
+
+.p-button:hover {
+    background: $color-primary-variation-dark-9;
+    border: 1px solid $color-primary-variation-dark-9;
+}
+
+.p-button-ghost:hover {
+    color: #ffffff;
+    background-color: $color-primary;
+    border: 1px solid $color-primary;
+}
+
+.p-button.p-button-raised {
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* Ripple effect */
+.ripple {
+    background-position: center;
+    transition: background 0.8s;
+}
+
+.ripple:hover {
+    background: $color-primary-variation-dark-9 radial-gradient(circle, transparent 1%, $color-primary-variation-dark-9 1%) (center / 15000%);
+}
+
+.ripple:active {
+    background-color: $color-primary;
+    background-size: 100%;
+    transition: background 0s;
+}
+
+/*css spiner in btn*/
+
+.btn_title {
+    display: block;
+}
+
+.hide-title_btn {
+    display: none;
+}
+
+.spinner-btn {
+    display: none;
+    font-size: inherit;
+    margin: 0 auto;
+    text-indent: -9999em;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    background: $color-primary;
+    background: -moz-linear-gradient(left, red 10%, rgba(255, 255, 255, 0) 42%);
+    background: -webkit-linear-gradient(left, red 10%, rgba(255, 255, 255, 0) 42%);
+    background: -o-linear-gradient(left, red 10%, rgba(255, 255, 255, 0) 42%);
+    background: -ms-linear-gradient(left, red 10%, rgba(255, 255, 255, 0) 42%);
+    background: linear-gradient(to right, #fff 10%, rgba(218, 22, 22, 0) 92%);
+    position: relative;
+    -webkit-animation: load3 1.4s infinite linear;
+    animation: load3 1.4s infinite linear;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+.show-spinner-btn {
+    display: block;
+    margin: 0 0 0 1em;
+}
+
+.show-spinner-btn-disabled {
+    opacity: 1;
+}
+
+.spinner-btn:before {
+    width: 50%;
+    height: 50%;
+    border-radius: 100% 0 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+}
+
+.spinner-btn:after {
+    background: $color-primary;
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    content: "";
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.p-button.p-button-link {
+    color: #0b7ad1;
+    background: transparent;
+    border: transparent;
+}
+
+.bottom-copytext{
+    height: 2.4em;
+}
+
+@keyframes load3 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.btn-ghost-small {
+    font-size: 0.8em;
+
+    @include buttons(g-small) {
+        &:hover {
+            background-color: $color-primary;
+            color: #fff;
+        }
+    }
+}
+
+.btn-large {
+    @include buttons(large);
+}
+
+//table
+@include media-max(md) {
+    .p-button {
+        width: 100%;
+    }
+}
+
+
+//smartphone
+@include media-max(sm) {
+    .p-button {
+        width: 100%;
+    }
+}

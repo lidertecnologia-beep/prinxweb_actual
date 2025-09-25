@@ -1,0 +1,28 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime"
+  ],
+  "rules": {
+    "react-hooks/exhaustive-deps": "off",
+    "react/prop-types": "off",
+    "no-undef": "off",
+    "rules-of-hooks": "off",
+    "import/named": "error", // Detecta si un nombre exportado no existe
+    "import/default": "error", // Detecta si no hay un export default
+    "import/export": "error", // Detecta problemas con exportaciones,
+    "import/no-unused-modules": "error", // Detecta módulos no usados
+    "import/no-duplicates": "error", // Detecta importaciones duplicadas
+    "no-anonymous-default-export":"off"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"] // Añade las extensiones que uses
+      }
+    }
+  },
+  "ignorePatterns": ["node_modules/**/*","dist/**/*", ".next/**/*"] // Ignora la carpeta node_modules
+}

@@ -1,0 +1,74 @@
+.p-sidebar-left {
+    top: 0;
+    left: 0;
+    width: 20rem;
+    height: 100%;
+}
+
+.p-sidebar {
+    position: fixed;
+}
+
+.p-sidebar {
+    background-color: $color-background-nav;
+    color: #495057;
+    padding: 1rem;
+    border: 0 none;
+    box-shadow: 0 2px 4px -1px rgba(241, 241, 241, 0.9), 0 4px 5px 0 rgba(241, 241, 241, 0.9),
+        0 1px 10px 0 rgba(241, 241, 241, 0.9);
+}
+
+.p-sidebar-icon,
+.p-sidebar-icons {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.p-sidebar-icons {
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+
+.p-sidebar-content {
+    position: relative;
+}
+
+.p-sidebar-mask.p-component-overlay {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.p-sidebar .p-sidebar-close,
+.p-sidebar .p-sidebar-icon {
+    width: 2rem;
+    height: 2rem;
+    color: #000;
+    border: 2px solid $color-primary;
+    background: $color-secondary-variation-clear-4;
+    border-radius: 50%;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.p-sidebar .p-sidebar-icon:hover {
+    border: 0 none;
+    color: $color-primary;
+    background: #fff;
+}
+
+.p-link {
+    text-align: left;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+//table
+@include media-max(md) {
+}

@@ -1,0 +1,37 @@
+@mixin buttons($type) {
+    display: inline-block;
+    padding: 2em 2em;
+    cursor: pointer;
+    line-height: inherit;
+    border-radius: 0.5rem !important; //se adiciona important temporal debido el user agent sobre escribe los radios de los botones
+    border: 1px solid $color-primary;
+    text-align: center;
+    background-color: $color-primary;
+    color: #fff;
+
+    @if $type == p { //primario
+        background-color: $color-primary;
+        color: #fff;
+    }
+
+    @if $type == p-large { //ghost small
+        background-color: $color-primary;
+        color: #fff;
+        width: 100%;
+    }
+
+    @if $type == g { //ghost
+        background-color: transparent;
+        border: 1px solid $color-primary;
+        color: $color-primary;
+    }
+
+    @if $type == g-small { //ghost small
+        background-color: transparent;
+        border: 1px solid $color-primary;
+        color: $color-primary;
+        padding: 0;
+    }
+
+    @content;
+}

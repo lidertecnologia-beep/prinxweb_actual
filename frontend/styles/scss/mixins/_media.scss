@@ -1,0 +1,12 @@
+// Small devices
+@mixin media-max($lenght) {
+    @media screen and (max-width: #{map-get($breakpoints, $lenght)}) {
+        @content;
+    }
+}
+
+@mixin media-min($lenght) {
+    @media screen and (min-width: #{map-get($breakpoints, $lenght)}) {
+        @content;
+    }
+}

@@ -1,0 +1,38 @@
+version: "3.9"
+
+services:
+
+  wsrestprinxclientes_springboot:
+    image: dmmlpaz/wsrestprinxclientes-springboot:latest
+    restart: always
+    container_name: wsrestprinxclientes-springboot
+    ports:
+      - "7001:7001"
+    volumes:
+      - /opt/Solicitudes:/opt/Solicitudes
+      - /opt/anexosDockerPrinx/Solicitudes/Solicitudes/:/home/apatom/prinx_dmp/Solicitudes/
+    mem_limit: 3g
+    networks:
+      prinxclientes:
+
+  app-prinx-clientes:
+    image: dmmlpaz/app-prinx-clientes:latest
+    restart: always
+    container_name: app-prinx-clientes
+    volumes:
+      - dataappprinx:/app
+    ports:
+      - "3001:3001"
+    depends_on:
+      - wsrestprinxclientes_springboot
+    mem_limit: 3g
+    networks:
+      prinxclientes:
+    environment:
+     - NEXT_PUBLIC_MAXIMO_ARCHIVOS_CARGAR=10
+
+volumes:
+  dataappprinx:
+
+networks:
+  prinxclientes:

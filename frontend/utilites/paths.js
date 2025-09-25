@@ -1,0 +1,6 @@
+export const LOGIN = '/'
+export const PERFIL = '/perfil'
+export const HOME = '/home'
+export const FORGOTPW = '/forgotpassword'
+export const REGISTRO_SOLICITUD = '/registrosolicitud'
+export const CONSULTA_SOLICITUD = '/consultasolicitudes'

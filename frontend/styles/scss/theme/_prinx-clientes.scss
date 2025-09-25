@@ -1,0 +1,670 @@
+.p-inputtext {
+    font-size: $font-content-size;
+    display: block;
+    padding: 4px 2px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #d1d3e2;
+    border-radius: 0.3rem;
+    -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+.page_login,
+.page_forgotpasworwd {
+    background-color: $color-background-login;
+    min-height: 100vh;
+}
+
+.p-inputtext.select {
+    padding: 0.5rem 0;
+}
+
+.p-error,
+.p-invalid {
+    color: $color-input-invalid;
+    font-size: $font-size-error-input;
+    font-style: italic;
+    margin: 0.1em;
+}
+
+.p-inputtext.p-error,
+.p-inputtext.p-invalid {
+    border-color: $color-input-invalid;
+}
+
+.p-message {
+    margin: 1rem 0;
+    border-radius: 3px;
+}
+
+.p-message .p-message-wrapper {
+    padding: 1rem 1.5rem;
+}
+
+.p-message .p-message-close {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: transparent;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.p-message .p-message-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.p-message .p-message-close:focus {
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: 0 0 0 0.2rem #a6d5fa;
+}
+
+.p-message.p-message-info {
+    background: #b3e5fc;
+    border: solid #0891cf;
+    border-width: 0 0 0 6px;
+    color: #044868;
+}
+
+.p-message.p-message-info .p-message-icon {
+    color: #044868;
+}
+
+.p-message.p-message-info .p-message-close {
+    color: #044868;
+}
+
+.p-message.p-message-success {
+    background: #c8e6c9;
+    border: solid #439446;
+    border-width: 0 0 0 6px;
+    color: #224a23;
+}
+
+.p-message.p-message-success .p-message-icon {
+    color: #224a23;
+}
+
+.p-message.p-message-success .p-message-close {
+    color: #224a23;
+}
+
+.p-message.p-message-warn {
+    background: $color-warning;
+    border: solid #d9a300;
+    border-width: 0 0 0 6px;
+    color: #6d5100;
+}
+
+.p-message.p-message-warn .p-message-icon {
+    color: #6d5100;
+}
+
+.p-message.p-message-warn .p-message-close {
+    color: #6d5100;
+}
+
+.p-message.p-message-error {
+    background: #ffcdd2;
+    border: solid #e60017;
+    border-width: 0 0 0 6px;
+    color: #73000c;
+}
+
+.p-message.p-message-error .p-message-icon {
+    color: #73000c;
+}
+
+.p-message.p-message-error .p-message-close {
+    color: #73000c;
+}
+
+.p-message .p-message-text {
+    font-size: $font-size-message-error;
+    font-weight: 500;
+}
+
+.p-message .p-message-icon {
+    font-size: 1rem;
+    margin-right: 0.5rem;
+}
+
+.p-message-detail {
+    font-size: $font-size-message-error;
+    font-weight: 600;
+}
+
+.card-app-flex {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.card-app {
+    display: block;
+    width: 90%;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.color-icons {
+    color: $color-primary;
+}
+
+.color-icons:hover {
+    color: $color-primary-variation-dark-9;
+    transform: scale(1.02);
+    transition: transform 0.2s;
+}
+
+.links {
+    text-decoration: underline solid $color-accent;
+    color: $color-font-content;
+}
+
+.font-content {
+    font-size: $font-content-size;
+}
+
+/*init css dropdow o inputselect*/
+
+@at-root .p-dropdown {
+    display: inline-flex;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+}
+
+.p-dropdown-clear-icon {
+    position: absolute;
+    top: 50%;
+    margin-top: -0.5rem;
+}
+
+.p-dropdown-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.p-dropdown-label {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    flex: 1 1 auto;
+    width: 1%;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.p-dropdown-label-empty {
+    overflow: hidden;
+    visibility: hidden;
+}
+
+.input.p-dropdown-label {
+    cursor: default;
+}
+
+.p-dropdown .p-dropdown-panel {
+    min-width: 100%;
+}
+
+.p-dropdown-panel {
+    position: absolute;
+}
+
+.p-dropdown-items-wrapper {
+    overflow: auto;
+    font-size: $font-content-size;
+}
+
+.p-dropdown-item {
+    cursor: pointer;
+    font-weight: normal;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+}
+
+.p-dropdown-items {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.p-dropdown-filter {
+    width: 100%;
+}
+
+.p-dropdown-filter-container {
+    position: relative;
+}
+
+.p-dropdown-filter-icon,
+.p-dropdown-filter-clear-icon {
+    position: absolute;
+    top: 50%;
+    margin-top: -0.5rem;
+}
+
+.p-dropdown-filter.p-inputtext {
+    padding: 0.5em;
+}
+
+.p-fluid .p-dropdown {
+    display: flex;
+}
+
+.p-fluid .p-dropdown .p-dropdown-label {
+    width: 1%;
+}
+
+.p-dropdown-panel {
+    background: #ffffff;
+    color: #495057;
+    border: 0 none;
+    border-radius: 3px;
+
+    /*Box-shadow para los elementos como dropdown y calendar */
+    box-shadow: 0 2px 4px -1px rgba(241, 241, 241, 0.9), 0 4px 5px 0 rgba(241, 241, 241, 0.9), 0 1px 10px 0 rgba(241, 241, 241, 0.9);
+}
+
+.p-dropdown-panel .p-dropdown-header {
+    padding: 0.5rem 1rem;
+    border-bottom: 0 none;
+    color: #495057;
+    background: $color-secondary-variation-clear-1;
+    margin: 0;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+.p-dropdown-panel .p-dropdown-header .p-dropdown-filter {
+    padding-right: 1.5rem;
+}
+
+.p-dropdown-panel .p-dropdown-header .p-dropdown-filter-icon {
+    right: 0.5rem;
+    color: #6c757d;
+}
+
+.pi {
+    font-family: "primeicons";
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    -webkit-font-feature-settings: normal;
+    font-feature-settings: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.pi {
+    font-size: 1rem;
+}
+
+.p-dropdown-panel .p-dropdown-items {
+    padding: 0.5rem 0;
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+    margin: 0;
+    padding: 0.5rem 1rem;
+    border: 0 none;
+    background: transparent;
+    transition: box-shadow 0.2s;
+    border-radius: 0;
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item:hover {
+    background: $color-secondary-variation-clear-2;
+}
+
+.p-dropdown .p-dropdown-clear-icon {
+    color: #6c757d;
+    right: 2.357rem;
+}
+
+.p-dropdown-label.p-inputtext {
+    border: none;
+}
+
+.p-dropdown .p-dropdown-trigger {
+    background: transparent;
+    color: #6c757d;
+    width: 2.357rem;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+/* fin dropdow o inputselect */
+
+/* init css calendar */
+
+.p-calendar {
+    position: relative;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+}
+
+.p-datepicker {
+    padding: 0.5rem;
+    background: #ffffff;
+    color: #495057;
+    border: 0 none;
+    border-radius: 3px;
+}
+
+.p-datepicker:not(.p-datepicker-inline) {
+    background: #ffffff;
+    border: 0 none;
+
+    /*Box-shadow para los elementos como dropdown y calendar */
+    box-shadow: 0 2px 4px -1px rgba(241, 241, 241, 0.9), 0 4px 5px 0 rgba(241, 241, 241, 0.9), 0 1px 10px 0 rgba(241, 241, 241, 0.9);
+}
+
+.p-datepicker-header {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.p-datepicker .p-datepicker-header {
+    padding: 0.5rem;
+    color: #495057;
+    background: #ffffff;
+    font-weight: 600;
+    margin: 0;
+    border-bottom: 1px solid #dee2e6;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+.p-calendar-w-btn .p-inputtext {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.p-calendar-w-btn .p-datepicker-trigger {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.p-fluid .p-button-icon-only {
+    width: 2.357rem;
+}
+
+.p-button-icon-only {
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.p-datepicker table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: inherit;
+    margin: 0.5rem 0;
+}
+
+.p-datepicker table td.p-datepicker-today > span {
+    background: #ced4da;
+    color: #495057;
+    border-color: transparent;
+}
+
+.p-datepicker table td > span {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    transition: box-shadow 0.2s;
+    border: 1px solid transparent;
+}
+
+.p-datepicker td > span,
+.p-monthpicker-month {
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+.p-datepicker td > span {
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 auto;
+}
+
+.p-datepicker table td > span.p-highlight {
+    color: #495057;
+    background: #e3f2fd;
+}
+
+.p-disabled {
+    cursor: default !important;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.p-calendar .p-button {
+    box-shadow: none;
+    color: #ffffff;
+    background-color: $color-primary;
+    border: 1px solid $color-primary;
+    padding: 4px 2px;
+    font-size: 0.75rem;
+    -moz-transition: background-color 0.1s;
+    transition: background-color 0.1s;
+    border-radius: 3px;
+}
+
+/* fin css calendar */
+
+/* init focos para los dropdown,p-datepicker o calendar */
+.p-inputtext:focus,
+.p-dropdown-filter.p-inputtext:focus,
+.p-datepicker:focus {
+    color: #6e707e !important;
+    background-color: #fff !important;
+    border-color: hsl(0, 0%, 96%);
+    outline: 0 !important;
+    -webkit-box-shadow: 0 0 0 0.1rem hsl(0, 0%, 96%);
+    box-shadow: 0 0 0 0.1rem hsl(0, 0%, 96%);
+}
+
+/* fin focos para los dropdown,p-datepicker o calendar */
+
+@include media-min(md) {
+    .title-container h1 {
+        text-align: left;
+    }
+
+    .title {
+        font-weight: 300;
+    }
+
+    .subtitle {
+        text-align: left;
+        font-weight: 900;
+    }
+
+    .font-title-menu,
+    .font-links {
+        font-size: $font-menu-size;
+    }
+
+    .card-app-flex,
+    .card-app {
+        display: none;
+    }
+
+    .p-card {
+        border-radius: 8px;
+        padding: 1rem;
+        background-color: #fff;
+
+        &-body {
+            width: 100%;
+            padding: 1rem;
+        }
+    }
+}
+
+
+.p-dialog-mask.p-component-overlay {
+    z-index: 1000 !important;
+}
+
+.p-galleria-item {
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 0.8em;
+    padding: 4em;
+}
+
+.p-galleria-thumbnail-container {
+    margin-top: 2em;
+    border-top: 1px solid $color-accent;
+    display: flex;
+    justify-content: center;
+    padding: .8em;
+}
+
+.p-button-icon-left {
+    margin-right: .4em;
+}
+
+.p-dropdown-label.p-inputtext {
+    border: none;
+}
+
+.p-toast .p-toast-message.p-toast-message-warn {
+    background: $color-message-warning;
+    border: solid hsl(44, 63%, 43%);;
+    border-width: 0 0 0 6px;
+}
+
+.p-toast .p-toast-message.p-toast-message-info {
+    background: $color-message-info;
+    border: solid hsl(190, 43%, 27%);
+    border-width: 0 0 0 6px;
+}
+
+.p-toast .p-toast-message.p-toast-message-error {
+    background: $color-message-danger;
+    border: solid hsl(353, 51%, 30%);
+    border-width: 0 0 0 6px;
+}
+
+.p-toast .p-toast-message.p-toast-message-success {
+    background: $color-message-succes;
+    border: solid hsl(134, 43%, 31%);
+    border-width: 0 0 0 6px;
+}
+
+.p-toast .p-toast-message {
+    margin: 0 0 1rem 0;
+    box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+    border-radius: 6px;
+}
+
+.p-toast-message-enter-done {
+    transform: none;
+}
+
+.p-toast .p-toast-message .p-toast-message-content {
+    padding: 1rem;
+    border-width: 0 0 0 6px;
+}
+
+.p-toast-message-content {
+    display: flex;
+    align-items: flex-start;
+}
+
+.p-toast-message-error .p-toast-message-text {
+    color: #fff;
+}
+
+.p-toast-message-icon {
+    display: none;
+}
+
+//css para el componenete de password para carga barra para validar si es fuerte la clave///
+
+.p-password.p-invalid.p-component > .p-inputtext {
+    border-color: #f44336;
+}
+
+.p-password-panel {
+    padding: 1rem;
+    background: #ffffff;
+    color: #495057;
+    border: 0 none;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 3px;
+}
+
+.p-password-panel .p-password-meter {
+    margin-bottom: 0.5rem;
+    background: #dee2e6;
+}
+
+.p-password-panel .p-password-meter .p-password-strength.weak {
+    background: #D32F2F;
+}
+
+.p-password-panel .p-password-meter .p-password-strength.medium {
+    background: #FBC02D;
+}
+
+.p-password-panel .p-password-meter .p-password-strength.strong {
+    background: #689F38;
+}
+
+.p-password-panel .p-password-info.weak {
+    color: #D32F2F;
+}
+
+.p-password-panel .p-password-info.medium {
+    color: #FBC02D;
+}
+
+.p-password-panel .p-password-info.strong {
+    color: #689F38;
+}
+
+.p-toast-summary{
+    font-size: $font-title-head-alert-size;
+    padding-bottom: 1em;
+}
+
+.p-toast-detail{
+    margin-top: 2em;
+}
