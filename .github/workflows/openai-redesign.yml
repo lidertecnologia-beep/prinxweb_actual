@@ -1,0 +1,73 @@
+name: Rediseño con OpenAI y despliegue en Firebase
+
+on:
+  push:
+    branches:
+      - PR_Rediseño  # o la rama que estés usando para el rediseño
+
+jobs:
+  redesign:
+    runs-on: ubuntu-latest
+    steps:
+      # Paso 1: Checkout del código
+      - name: Check out code
+        uses: actions/checkout@v2
+      
+      # Paso 2: Configurar Node.js (si es necesario)
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      # Paso 3: Instalar dependencias del proyecto
+      - name: Install dependencies
+        run: npm install
+
+      # Paso 4: Usar OpenAI para rediseñar
+      - name: Generate redesign using OpenAI
+        run: |
+          node -e "
+          const axios = require('axios');
+          const fs = require('fs');
+          const apiKey = process.env.OPENAI_API_KEY;
+          const prompt = 'Lee este código frontend y propon un rediseño moderno y profesional, aplicando mejores prácticas de desarrollo y UX/UI.';
+
+          // Leer el código actual desde el archivo (por ejemplo, app/login/page.tsx)
+          const code = fs.readFileSync('app/login/page.tsx', 'utf8');
+
+          axios.post('https://api.openai.com/v1/completions', {
+            model: 'gpt-4',
+            prompt: prompt + code,
+            max_tokens: 1000,
+            temperature: 0.7,
+            n: 1,
+            stop: ['\n']
+          }, {
+            headers: {
+              'Authorization': `Bearer ${apiKey}`
+            }
+          }).then(response => {
+            const newCode = response.data.choices[0].text;
+            fs.writeFileSync('app/login/rediseñado.tsx', newCode);
+            console.log('Rediseño generado:', newCode);
+          }).catch(error => {
+            console.error('Error al generar el rediseño:', error);
+          });
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+      # Paso 5: Subir el código generado a GitHub
+      - name: Commit and push redesign changes
+        run: |
+          git config --global user.email "your-email@example.com"
+          git config --global user.name "Your Name"
+          git add .
+          git commit -m "Rediseño de login con OpenAI"
+          git push origin redesign
+
+      # Paso 6: Desplegar en Firebase
+      - name: Deploy to Firebase Hosting
+        uses: wzieba/Firebase-Action@v2
+        with:
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_KEY }}
+          channelId: "redesign-channel"
