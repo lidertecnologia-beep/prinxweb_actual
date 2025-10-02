@@ -42,12 +42,17 @@ const Login = () => {
     setSpinner(true)
     requestAuth(data.us, data.pw, `${process.env.NEXT_PUBLIC_ENDPOINT_GET_AUTH_SPRING}`)
       .then(r => {
+         console.log('xxxxxx pas 1 incila')
+          loadDataSession(r.data.body)
         if (r.data.body?.ERROR) {
           setSpinner(false)
           showMessage.current.show([{ severity: 'warn', detail: 'Usuario o clave invalida', life: 3000 }])
           return
         }
+         console.log('xxxxxx pas 0')
+          loadDataSession(r.data.body)
         if (r && (r.data.statusCode === 'ok' || r.data.statusCode === 'OK')) {
+          console.log('xxxxxx pas 1 entro')
           loadDataSession(r.data.body)
         }
         setSpinner(false)
