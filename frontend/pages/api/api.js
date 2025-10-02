@@ -162,8 +162,7 @@ export const requestAuth = async (us, pw, endPoint) =>
     {},
     {
       headers: {
-        Authorization: `${process.env.NEXT_PUBLIC_ENDPOINT_TYPE_AUTH
-          } ${typeAuth[process.env.NEXT_PUBLIC_ENDPOINT_TYPE_AUTH](us, pw)}`,
+        Authorization: `${process.env.NEXT_PUBLIC_ENDPOINT_TYPE_AUTH} ${Buffer.from(`${us}:${pw}`, "utf8").toString(process.env.NEXT_PUBLIC_ENDPOINT_TYPE_ENCODE)}`,
       },
     }
   );
